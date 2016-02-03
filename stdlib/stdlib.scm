@@ -1,0 +1,7 @@
+(define (list . objs)       objs)
+(define (curry func arg1)  (lambda (arg) (apply func (cons arg1 (list arg)))))
+(define zero? (curry = 0))
+(define positive? (curry < 0))
+(define negative? (curry > 0))
+(define (odd? num) (= (mod num 2) 1))
+(define (even? num) (= (mod num 2) 0))
